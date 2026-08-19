@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <h2 class="navbar-title">Birthdays</h2>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link active">22nd Birthday</a></li>
+                <li><a href="birthday21.html" class="navbar-link">21st Birthday</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Happy 22nd Birthday! 🎂🎉</h1>
+        <p class="message">You are turning:</p>
+        <div class="age" id="ageDisplay">22</div>
+        <p class="message"> Happy Birthday sa pinakamagandang binibining bb sa mundo </p>
+       <button id="celebrateButton" onclick="celebrateBirthday()"> Click to Celebrate!  </button>
+    </div>
+    
+    <div class="MyMessage">
+        <h1>My message</h1>
+        <p>Halo may you hab a hapiii bortday, sana maging hapi ka at 'wag isiping magpakamatayy 'wag kaa mawawala sa landaz focuz ka lang sa kung anu dapat mong makita
+            liek ano baa goall moo sitting still gives you nothing but anxiety oke? Yu just handle what comes nexttt, alam ku kaya mu ihandle yarn ket iyaking bb yarn alam ku malakas ikaw
+            you dasarb peace di porket panet na life mu papangitin mo pa 🙄 me still see the queen in you,, pagodd ka langg kontiin mu lang ang pahinga pero ya don't get too hard on yourself and me da one pushed you away
+            pero sigaw ng puso koo me didn't relly wanted you to go. kaw yung tao na pumasok sa mundoo ko at nagbigay kulay sa akin  i tenk you were so so much happierr before, but on aside alamin mu kung anu gustu mu onti onti lang malay mu si allah may mas bigger picture pa sayo hihi
+            anywayz, yu enjoy your bortday kain madami, baka kantahan ka ulet sa kainan HAHAHAHHAH  
+        </p>
+    </div>
+    
+    <div class="MyMessage2">
+        <h1> My Gift </h1>
+        <p> 1k bobux sana kasu konti palang points, i gib kapag nabuo 😋
+
+            Ayusin ko pa diz website soon
+        </p>
+    </div>
+
+    <script>
+         function celebrateBirthday() {
+        const button = document.getElementById('celebrateButton');
+
+        button.textContent = '🎊 Happy Birthday! 🎊';
+        button.classList.add('celebrating');
+
+        alert('Araw araw kang maganda. Stay hapii! 💖');
+
+        for (let i = 0; i < 30; i++) {
+            const confetti = document.createElement('span');
+            confetti.className = 'confetti';
+            confetti.textContent = ['🎉', '💖', '✨', '🎂','❤️'][Math.floor(Math.random() * 5)];
+
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 2500);
+        }
+
+        setTimeout(() => {
+            button.textContent = '🎉 Click to Celebrate! 🎂';
+            button.classList.remove('celebrating');
+        }, 2000);
+    }
+
+    function goToBirthdays() {
+        window.location.href = 'birthday21.html';
+    }
+    </script>
+</body>
+</html>
